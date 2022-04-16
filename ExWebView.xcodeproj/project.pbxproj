@@ -13,6 +13,7 @@
 		4AFF94C5280A7BF800457F8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF94C3280A7BF800457F8F /* Main.storyboard */; };
 		4AFF94C7280A7BF900457F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF94C6280A7BF900457F8F /* Assets.xcassets */; };
 		4AFF94CA280A7BF900457F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFF94C8280A7BF900457F8F /* LaunchScreen.storyboard */; };
+		76C469BCF3D797319A0ABD51 /* Pods_ExWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB218FB2B470F52F92888FF /* Pods_ExWebView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		4AFF94C6280A7BF900457F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AFF94C9280A7BF900457F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AFF94CB280A7BF900457F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		952869DAE40D9423D6EC221A /* Pods-ExWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExWebView.release.xcconfig"; path = "Target Support Files/Pods-ExWebView/Pods-ExWebView.release.xcconfig"; sourceTree = "<group>"; };
+		99E395B630A6505DE97A6CE7 /* Pods-ExWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExWebView.debug.xcconfig"; path = "Target Support Files/Pods-ExWebView/Pods-ExWebView.debug.xcconfig"; sourceTree = "<group>"; };
+		BFB218FB2B470F52F92888FF /* Pods_ExWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C469BCF3D797319A0ABD51 /* Pods_ExWebView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B2F268B514B7D095B820616 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFB218FB2B470F52F92888FF /* Pods_ExWebView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4AFF94B1280A7BF800457F8F = {
 			isa = PBXGroup;
 			children = (
 				4AFF94BC280A7BF800457F8F /* ExWebView */,
 				4AFF94BB280A7BF800457F8F /* Products */,
+				8D52EF008924349D4DDF17E5 /* Pods */,
+				2B2F268B514B7D095B820616 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = ExWebView;
 			sourceTree = "<group>";
 		};
+		8D52EF008924349D4DDF17E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99E395B630A6505DE97A6CE7 /* Pods-ExWebView.debug.xcconfig */,
+				952869DAE40D9423D6EC221A /* Pods-ExWebView.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AFF94CE280A7BF900457F8F /* Build configuration list for PBXNativeTarget "ExWebView" */;
 			buildPhases = (
+				49C580C3F74D7266D87567C8 /* [CP] Check Pods Manifest.lock */,
 				4AFF94B6280A7BF800457F8F /* Sources */,
 				4AFF94B7280A7BF800457F8F /* Frameworks */,
 				4AFF94B8280A7BF800457F8F /* Resources */,
+				E9906F9F28C6DFC83A3E8856 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49C580C3F74D7266D87567C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExWebView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9906F9F28C6DFC83A3E8856 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExWebView/Pods-ExWebView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExWebView/Pods-ExWebView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExWebView/Pods-ExWebView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AFF94B6280A7BF800457F8F /* Sources */ = {
@@ -284,6 +352,7 @@
 		};
 		4AFF94CF280A7BF900457F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E395B630A6505DE97A6CE7 /* Pods-ExWebView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +381,7 @@
 		};
 		4AFF94D0280A7BF900457F8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 952869DAE40D9423D6EC221A /* Pods-ExWebView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
